@@ -25,7 +25,7 @@
       const profileImageUrl = "https://leejgc.github.io/mobile-business-card/kakao-profile.png";
       const button = document.querySelector("#kakao-share");
       const smsShare = document.querySelector("#sms-share");
-      const smsBody = "안녕하세요, AZ금융서비스 이종찬 보험설계사입니다.\n모바일 명함: " + cardUrl;
+      const smsBody = "안녕하세요, AZ금융서비스\n[이종찬] 보험설계사입니다.\n\n모바일 명함: " + cardUrl;
 
       smsShare.href = "sms:?body=" + encodeURIComponent(smsBody);
 
