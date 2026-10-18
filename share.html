@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <link rel="preload" href="PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="share.css">
+  <title>이종찬 명함 공유 | AZ금융서비스</title>
+  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.2/kakao.min.js" integrity="sha384-zt/G7/KfaRQ9dT/QIkS0ujMtzouJqzuSJcXVQu50x0rl/+mD1dc70AeOejVbMD9E" crossorigin="anonymous"></script>
+</head>
+<body>
+  <main class="share-page">
+    <p class="share-page__company">AZ금융서비스</p>
+    <h1>이종찬 보험설계사<br>명함 보내기</h1>
+    <p class="share-page__description">카카오톡 채팅방을 선택하면 신뢰성 있는 명함 카드로 전달됩니다.</p>
+    <button id="kakao-share" type="button">카카오톡으로 명함 보내기</button>
+    <a class="share-page__back" href="./">명함 화면으로 돌아가기</a>
+  </main>
+  <script>
+    (() => {
+      const cardUrl = "https://leejgc.github.io/mobile-business-card/";
+      const imageUrl = "https://leejgc.github.io/mobile-business-card/og-business-card.png";
+      const profileImageUrl = "https://leejgc.github.io/mobile-business-card/kakao-profile.png";
+      const button = document.querySelector("#kakao-share");
+
+      if (!window.Kakao) {
+        button.disabled = true;
+        button.textContent = "카카오톡 공유 기능을 불러오지 못했습니다";
+        return;
+      }
+      if (!window.Kakao.isInitialized()) {
+        window.Kakao.init("e1c62fd5c6c8d22e28e88e8e616ab613");
+      }
+
+      button.addEventListener("click", () => {
+        window.Kakao.Share.sendDefault({
+          objectType: "feed",
+          content: {
+            title: "이종찬 | AZ금융서비스 보험설계사",
+            description: "보험을 보다 쉽게, 든든하게",
+            imageUrl,
+            imageWidth: 1200,
+            imageHeight: 630,
+            link: { mobileWebUrl: cardUrl, webUrl: cardUrl },
+          },
+          itemContent: {
+            profileText: "이종찬 | AZ금융서비스",
+            profileImageUrl,
+          },
+          buttons: [{
+            title: "명함 확인",
+            link: { mobileWebUrl: cardUrl, webUrl: cardUrl },
+          }],
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
