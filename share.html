@@ -13,8 +13,9 @@
   <main class="share-page">
     <p class="share-page__company">AZ금융서비스</p>
     <h1>이종찬 보험설계사<br>명함 보내기</h1>
-    <p class="share-page__description">카카오톡 채팅방을 선택하면 신뢰성 있는 명함 카드로 전달됩니다.</p>
+    <p class="share-page__description">카카오톡 또는 문자로 고객에게 명함을 전달할 수 있습니다.</p>
     <button id="kakao-share" type="button">카카오톡으로 명함 보내기</button>
+    <a id="sms-share" href="sms:?body=" aria-label="문자로 명함 보내기">문자로 명함 보내기</a>
     <a class="share-page__back" href="./">명함 화면으로 돌아가기</a>
   </main>
   <script>
@@ -23,6 +24,10 @@
       const imageUrl = "https://leejgc.github.io/mobile-business-card/og-business-card.png";
       const profileImageUrl = "https://leejgc.github.io/mobile-business-card/kakao-profile.png";
       const button = document.querySelector("#kakao-share");
+      const smsShare = document.querySelector("#sms-share");
+      const smsBody = "안녕하세요, AZ금융서비스 이종찬 보험설계사입니다.\n모바일 명함: " + cardUrl;
+
+      smsShare.href = "sms:?body=" + encodeURIComponent(smsBody);
 
       if (!window.Kakao) {
         button.disabled = true;

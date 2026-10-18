@@ -11,4 +11,6 @@ h1 { margin: 34px 0 0; color: var(--share-deep); font-size: clamp(32px, 9vw, 42p
 #kakao-share { display: flex; width: 100%; min-height: 64px; align-items: center; justify-content: center; border: 0; border-radius: 14px; background: #fee500; color: #1d1d1d; font: inherit; font-size: 19px; font-weight: 800; letter-spacing: -.04em; cursor: pointer; }
 #kakao-share:focus-visible { outline: 3px solid var(--share-blue); outline-offset: 3px; }
 #kakao-share:disabled { cursor: not-allowed; opacity: .6; }
+#sms-share { display: flex; width: 100%; min-height: 60px; align-items: center; justify-content: center; margin-top: 12px; border: 1px solid var(--share-blue); border-radius: 14px; background: #fff; color: var(--share-deep); font-size: 18px; font-weight: 750; letter-spacing: -.04em; text-decoration: none; }
+#sms-share:focus-visible { outline: 3px solid var(--share-blue); outline-offset: 3px; }
 .share-page__back { display: block; margin-top: 24px; color: var(--share-deep); font-size: 16px; font-weight: 650; text-align: center; text-decoration: none; }
