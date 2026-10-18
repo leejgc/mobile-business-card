@@ -1,0 +1,90 @@
+@font-face {
+  font-family: "Pretendard";
+  src: url("PretendardVariable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: block;
+}
+
+:root {
+  --font-family: "Pretendard", sans-serif;
+  --az-blue: #1769d5;
+  --az-blue-deep: #114b9c;
+  --az-blue-soft: #eef5ff;
+  --ink: #1d2a3c;
+  --muted: #5c6b80;
+  --line: #d8e1ec;
+  --table-head: #f3f6fa;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+@page { size: A4; margin: 0; }
+
+html, body { margin: 0; min-height: 100%; }
+
+body {
+  background: #e9edf2;
+  color: var(--ink);
+  font-family: var(--font-family);
+  font-size: 14px;
+  line-height: 1.7;
+  text-rendering: optimizeLegibility;
+}
+
+.a4-page {
+  width: 794px;
+  min-height: 1123px;
+  margin: 24px auto;
+  padding: 38px 38px 45px 49px;
+  background: #fff;
+}
+
+.page-header { margin-bottom: 32px; }
+
+.page-title {
+  margin: 0;
+  color: var(--ink);
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.25;
+}
+
+.title-rule {
+  width: 48px;
+  height: 5px;
+  margin-top: 15px;
+  background: var(--az-blue);
+}
+
+.surface {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  padding: 24px;
+}
+
+.section-heading {
+  margin: 0 0 16px;
+  color: var(--ink);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.section-heading__number { color: var(--az-blue); margin-right: 8px; }
+
+.body-copy { margin: 0; color: var(--muted); }
+
+.data-table { width: 100%; border-collapse: collapse; }
+.data-table th, .data-table td { border-bottom: 1px solid var(--line); padding: 10px 12px; text-align: left; }
+.data-table th { background: var(--table-head); color: var(--ink); font-size: 12px; font-weight: 700; }
+
+.profile-photo { border: 1px solid var(--line); border-radius: var(--radius); display: block; object-fit: cover; }
+
+@media print {
+  body { background: #fff; }
+  .a4-page { width: 210mm; min-height: 297mm; margin: 0; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+}
