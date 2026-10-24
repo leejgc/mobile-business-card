@@ -21,7 +21,7 @@
   <script>
     (() => {
       const cardUrl = "https://leejgc.github.io/mobile-business-card/";
-      const imageUrl = "https://leejgc.github.io/mobile-business-card/og-business-card.png?v=20261019-vertical";
+      const imageUrl = "https://leejgc.github.io/mobile-business-card/kakao-share-v4.png";
       const profileImageUrl = "https://leejgc.github.io/mobile-business-card/kakao-profile.png";
       const button = document.querySelector("#kakao-share");
       const smsShare = document.querySelector("#sms-share");
@@ -42,6 +42,7 @@
         window.Kakao.Share.sendDefault({
           objectType: "feed",
           content: {
+            title: "이종찬 | AZ금융서비스",
             imageUrl,
             imageWidth: 1200,
             imageHeight: 630,
@@ -52,7 +53,7 @@
             profileImageUrl,
           },
           buttons: [{
-            title: "명함 확인",
+            title: "모바일 명함 보기",
             link: { mobileWebUrl: cardUrl, webUrl: cardUrl },
           }],
         });
