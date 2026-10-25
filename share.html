@@ -14,11 +14,14 @@
     <h1>이종찬 보험설계사<br>명함 보내기</h1>
     <button id="kakao-share" type="button">카카오톡으로 명함 보내기</button>
     <a id="sms-share" href="sms:?body=" aria-label="문자로 명함 보내기">문자로 명함 보내기</a>
+    <button id="copy-notice-link" type="button">공지용 명함 링크 복사</button>
+    <p id="copy-notice-status" class="copy-notice-status" aria-live="polite" role="status"></p>
   </main>
   <script>
     (() => {
       const cardUrl = "https://leejgc.github.io/mobile-business-card/";
       const imageUrl = "https://leejgc.github.io/mobile-business-card/kakao-share-v4.png";
+      const noticeText = "이종찬 보험설계사 모바일 명함\n\n" + cardUrl;
       const advisorSmsBody = [
         "안녕하세요.",
         "에즈금융서비스 보험설계사 이종찬입니다.",
@@ -30,6 +33,34 @@
       ].join("\n");
       const kakaoButton = document.querySelector("#kakao-share");
       const smsButton = document.querySelector("#sms-share");
+      const copyNoticeButton = document.querySelector("#copy-notice-link");
+      const copyNoticeStatus = document.querySelector("#copy-notice-status");
+
+      const fallbackCopy = (text) => {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "fixed";
+        textarea.style.opacity = "0";
+        document.body.appendChild(textarea);
+        textarea.select();
+        const copied = document.execCommand("copy");
+        textarea.remove();
+        return copied;
+      };
+
+      copyNoticeButton.addEventListener("click", async () => {
+        try {
+          if (navigator.clipboard?.writeText) {
+            await navigator.clipboard.writeText(noticeText);
+          } else if (!fallbackCopy(noticeText)) {
+            throw new Error("clipboard-unavailable");
+          }
+          copyNoticeStatus.textContent = "공지용 명함 링크를 복사했습니다.";
+        } catch {
+          copyNoticeStatus.textContent = "복사하지 못했습니다. 다시 시도해 주세요.";
+        }
+      });
 
       smsButton.href = "sms:?body=" + encodeURIComponent(advisorSmsBody);
 
@@ -46,7 +77,7 @@
         window.Kakao.Share.sendDefault({
           objectType: "feed",
           content: {
-            title: "이종찬 | 에즈금융서비스",
+            title: "이종찬 | 보험설계사",
             imageUrl,
             imageWidth: 1200,
             imageHeight: 630,

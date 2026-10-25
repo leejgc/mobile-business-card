@@ -5,7 +5,7 @@
   const KAKAO_APP_KEY = "e1c62fd5c6c8d22e28e88e8e616ab613";
   const KAKAO_CARD_URL = "https://leejgc.github.io/mobile-business-card/";
   const KAKAO_IMAGE_URL = "https://leejgc.github.io/mobile-business-card/kakao-share-v4.png";
-  const KAKAO_TITLE = "이종찬 | 에즈금융서비스";
+  const KAKAO_TITLE = "이종찬 | 보험설계사";
   const KAKAO_BUTTON_TITLE = "명함 보기";
   const VCF_URL = "lee-jongchan.vcf";
   // Keep social URLs in this one place. Empty strings are intentional until the owner registers a channel.

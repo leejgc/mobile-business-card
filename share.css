@@ -2,7 +2,7 @@
 :root { --share-blue: #1769d5; --share-deep: #082d67; --share-soft: #eef5ff; --share-ink: #1d2a3c; }
 * { box-sizing: border-box; }
 html { background: var(--share-soft); }
-body { min-width: 320px; margin: 0; background: var(--share-soft); color: var(--share-ink); font-family: "Pretendard", sans-serif; }
+body { min-width: 0; margin: 0; background: var(--share-soft); color: var(--share-ink); font-family: "Pretendard", sans-serif; }
 .share-page { width: min(100%, 480px); min-height: 100dvh; margin: 0 auto; padding: 64px 24px 40px; }
 .share-page__company { margin: 0; color: var(--share-blue); font-size: 18px; font-weight: 800; letter-spacing: -.04em; }
 .share-page__company::after { display: block; width: 48px; height: 5px; margin-top: 12px; background: var(--share-blue); content: ""; }
@@ -14,4 +14,8 @@ h1 { margin: 34px 0 0; color: var(--share-deep); font-size: clamp(32px, 9vw, 42p
 #kakao-share:disabled { cursor: not-allowed; opacity: .6; }
 #sms-share { display: flex; width: 100%; min-height: 60px; align-items: center; justify-content: center; margin-top: 12px; border: 1px solid var(--share-blue); border-radius: 14px; background: #fff; color: var(--share-deep); font-size: 18px; font-weight: 750; letter-spacing: -.04em; text-decoration: none; }
 #sms-share:focus-visible { outline: 3px solid var(--share-blue); outline-offset: 3px; }
+#copy-notice-link { display: flex; width: 100%; min-height: 60px; align-items: center; justify-content: center; margin-top: 12px; border: 1px solid #b9c9dc; border-radius: 14px; background: #fff; color: var(--share-deep); font: inherit; font-size: 18px; font-weight: 750; letter-spacing: -.04em; cursor: pointer; }
+#copy-notice-link:focus-visible { outline: 3px solid var(--share-blue); outline-offset: 3px; }
+#copy-notice-link:active { background: #f5f8fc; }
+.copy-notice-status { min-height: 24px; margin: 10px 0 0; color: #276c4d; font-size: 15px; font-weight: 650; letter-spacing: -.03em; text-align: center; }
 .share-page__back { display: block; margin-top: 24px; color: var(--share-deep); font-size: 16px; font-weight: 650; text-align: center; text-decoration: none; }
