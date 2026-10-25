@@ -1,10 +1,17 @@
 (() => {
   const PHONE = "01037715487";
   const DISPLAY_PHONE = "010-3771-5487";
-  const SHARE_URL = "https://leejgc.github.io/mobile-business-card/share.html";
+  const ADVISOR_SHARE_URL = "https://leejgc.github.io/mobile-business-card/test-v2/advisor-share.html";
   const KAKAO_APP_KEY = "e1c62fd5c6c8d22e28e88e8e616ab613";
   const KAKAO_CARD_URL = "https://leejgc.github.io/mobile-business-card/";
   const KAKAO_IMAGE_URL = "https://leejgc.github.io/mobile-business-card/kakao-share-v4.png";
+  const KAKAO_TITLE = "이종찬 | 에즈금융서비스";
+  const KAKAO_BUTTON_TITLE = "명함 보기";
+  const KAKAO_CUSTOMER_DESCRIPTION = [
+    "안녕하세요.",
+    "모바일 명함을 공유해 드립니다.",
+    "소개와 연락처는 아래에서 확인해 보세요."
+  ].join("\n");
   const VCF_URL = "assets/lee-jongchan.vcf";
   // Keep social URLs in this one place. Empty strings are intentional until the owner registers a channel.
   const SNS_LINKS = Object.freeze({ youtube: "", instagram: "", blog: "" });
@@ -16,10 +23,10 @@
   const messages = {
     agent: [
       "안녕하세요.",
-      "보험설계사 이종찬입니다.",
+      "에즈금융서비스 보험설계사 이종찬입니다.",
       "",
       "제 모바일 명함을 보내드립니다.",
-      "아래 링크를 눌러 확인해 주세요.",
+      "보험 관련 문의가 있으시면 편하게 연락 주세요.",
       "",
       "https://leejgc.github.io/mobile-business-card/"
     ].join("\n"),
@@ -97,7 +104,7 @@
     }
   ];
 
-  const qa = { claims: claims.length, copyResults: [], smsMessages: messages, shareUrl: SHARE_URL, vcfUrl: VCF_URL, sns: {}, kakao: { sdkLoaded: Boolean(window.Kakao), initialized: false, attempts: [] } };
+  const qa = { claims: claims.length, copyResults: [], smsMessages: messages, shareUrl: ADVISOR_SHARE_URL, vcfUrl: VCF_URL, sns: {}, kakao: { sdkLoaded: Boolean(window.Kakao), initialized: false, attempts: [] } };
   window.__v2Qa = qa;
 
   const isValidWebUrl = (value) => {
@@ -194,18 +201,19 @@
       window.Kakao.Share.sendDefault({
         objectType: "feed",
         content: {
-          title: "이종찬 | AZ금융서비스",
+          title: KAKAO_TITLE,
+          description: KAKAO_CUSTOMER_DESCRIPTION,
           imageUrl: KAKAO_IMAGE_URL,
           imageWidth: 1200,
           imageHeight: 630,
           link: { mobileWebUrl: KAKAO_CARD_URL, webUrl: KAKAO_CARD_URL },
         },
         buttons: [{
-          title: "모바일 명함 보기",
+          title: KAKAO_BUTTON_TITLE,
           link: { mobileWebUrl: KAKAO_CARD_URL, webUrl: KAKAO_CARD_URL },
         }],
       });
-      qa.kakao.attempts.push({ ok: true, mode: "sendDefault", title: "이종찬 | AZ금융서비스", imageUrl: KAKAO_IMAGE_URL, link: KAKAO_CARD_URL });
+      qa.kakao.attempts.push({ ok: true, mode: "sendDefault", title: KAKAO_TITLE, description: KAKAO_CUSTOMER_DESCRIPTION, imageUrl: KAKAO_IMAGE_URL, button: KAKAO_BUTTON_TITLE, link: KAKAO_CARD_URL });
     } catch (error) {
       qa.kakao.attempts.push({ ok: false, reason: "send-error", message: error instanceof Error ? error.message : String(error) });
       showToast("카카오톡 공유를 시작하지 못했습니다. 허용 도메인과 카카오톡 설치 상태를 확인해 주세요.");
