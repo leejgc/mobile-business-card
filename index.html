@@ -1,65 +1,121 @@
 <!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="AZ금융서비스 보험설계사 이종찬의 모바일 디지털 명함">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ko_KR">
-  <meta property="og:url" content="https://leejgc.github.io/mobile-business-card/">
-  <meta property="og:title" content="이종찬 | AZ금융서비스 보험설계사">
-  <meta property="og:description" content="보험을 보다 쉽게, 든든하게">
-  <meta property="og:image" content="https://leejgc.github.io/mobile-business-card/og-business-card.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="AZ금융서비스 이종찬 보험설계사 모바일 명함">
-  <meta property="og:site_name" content="AZ금융서비스">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="이종찬 | AZ금융서비스 보험설계사">
-  <meta name="twitter:description" content="보험을 보다 쉽게, 든든하게">
-  <meta name="twitter:image" content="https://leejgc.github.io/mobile-business-card/og-business-card.png">
-  <link rel="preload" href="PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="binder-core.css">
-  <link rel="stylesheet" href="mobile-business-card.css">
-  <title>이종찬 | AZ금융서비스 보험설계사</title>
-</head>
-<body>
-  <main class="business-card">
-    <header class="brand" aria-label="AZ금융서비스">
-      <p class="brand__name">AZ금융서비스</p>
-      <div class="brand__rule" aria-hidden="true"></div>
-    </header>
+<html lang="ko" data-variant="a">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="AZ금융서비스 보험설계사 이종찬의 모바일 디지털 명함">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:url" content="https://leejgc.github.io/mobile-business-card/">
+    <meta property="og:title" content="이종찬 | AZ금융서비스 보험설계사">
+    <meta property="og:description" content="보험을 보다 쉽게, 든든하게">
+    <meta property="og:image" content="https://leejgc.github.io/mobile-business-card/og-business-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="AZ금융서비스 이종찬 보험설계사 모바일 명함">
+    <meta property="og:site_name" content="AZ금융서비스">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="이종찬 | AZ금융서비스 보험설계사">
+    <meta name="twitter:description" content="보험을 보다 쉽게, 든든하게">
+    <meta name="twitter:image" content="https://leejgc.github.io/mobile-business-card/og-business-card.png">
+    <meta name="theme-color" content="#eaf4ff">
+    <title>이종찬 | AZ금융서비스 보험설계사</title>
+    <link rel="preload" href="PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="mobile-business-card.css">
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.2/kakao.min.js" integrity="sha384-zt/G7/KfaRQ9dT/QIkS0ujMtzouJqzuSJcXVQu50x0rl/+mD1dc70AeOejVbMD9E" crossorigin="anonymous" defer></script>
+    <script>
+      const variant = new URLSearchParams(location.search).get('variant');
+      document.documentElement.dataset.variant = variant === 'b' ? 'b' : 'a';
+    </script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <main class="card-shell">
+      <section class="profile-panel" aria-labelledby="profile-name">
+        <div class="profile-hero">
+          <img class="brand-logo" src="assets/az-financial-service-horizontal.png" alt="AZ FINANCIAL SERVICE">
+          <div class="profile-photo-frame" data-photo-frame>
+            <img src="agent-profile-cutout.png" alt="보험설계사 이종찬 실제 증명사진">
+          </div>
+          <div class="profile-copy">
+            <div class="name-lockup">
+              <h1 id="profile-name">이종찬</h1>
+              <div class="role-lockup"><span class="role-text role-text--legacy">에즈금융 보험설계사</span><span class="role-text role-text--a">에즈금융서비스 보험설계사</span></div>
+            </div>
+          </div>
+        </div>
 
-    <section class="identity-card" aria-labelledby="agent-name">
-      <img class="profile-photo" src="agent-profile-cutout.png" alt="AZ금융서비스 보험설계사 이종찬">
-      <h1 id="agent-name" class="agent-name">이종찬</h1>
-      <p class="agent-role">보험설계사</p>
-      <a class="agent-phone" href="tel:01037715487" aria-label="이종찬에게 전화하기, 010-3771-5487">010-3771-5487</a>
-    </section>
+        <div class="action-grid action-grid--four profile-contact-grid" aria-label="연락 기능">
+          <a class="contact-action contact-action--phone" href="tel:01037715487">
+            <span class="icon-wrap" aria-hidden="true"><img src="assets/icons/phone.png" alt=""></span><span>전화 걸기</span>
+          </a>
+          <a class="contact-action contact-action--message" href="sms:01037715487">
+            <span class="icon-wrap" aria-hidden="true"><img src="assets/icons/message.png" alt=""></span><span>문자 보내기</span>
+          </a>
+          <a class="contact-action contact-action--contact" href="lee-jongchan.vcf">
+            <span class="icon-wrap" aria-hidden="true"><img src="assets/icons/contact-add.png" alt=""></span><span>연락처 저장</span>
+          </a>
+          <button class="contact-action contact-action--share" type="button" data-open-sheet="share-sheet">
+            <span class="icon-wrap" aria-hidden="true"><img src="assets/icons/share-box.png" alt=""></span><span>명함 공유</span>
+          </button>
+        </div>
 
-    <nav class="contact-actions" aria-label="연락 방법">
-      <a class="contact-action contact-action--primary" href="tel:01037715487">전화하기</a>
-      <a class="contact-action" href="sms:01037715487">문자하기</a>
-      <a class="contact-action contact-action--save" href="lee-jongchan.vcf" download="이종찬_AZ금융서비스.vcf">연락처 저장</a>
-    </nav>
+        <div class="profile-social-row" data-sns-row hidden aria-label="SNS 링크">
+          <a class="social-item social-item--youtube" data-sns-channel="youtube" aria-label="유튜브" hidden>
+            <span class="social-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect class="youtube-body" x="3.2" y="5.3" width="17.6" height="13.4" rx="4"/><path class="youtube-play" d="m10.2 8.7 5.4 3.3-5.4 3.3V8.7Z"/></svg></span><span class="visually-hidden">유튜브</span>
+          </a>
+          <a class="social-item social-item--instagram" data-sns-channel="instagram" aria-label="인스타그램" hidden>
+            <span class="social-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4.2" y="4.2" width="15.6" height="15.6" rx="4.5"/><circle cx="12" cy="12" r="3.7"/><circle cx="17.2" cy="6.8" r=".8"/></svg></span><span class="visually-hidden">인스타그램</span>
+          </a>
+          <a class="social-item social-item--blog" data-sns-channel="blog" aria-label="블로그" hidden>
+            <span class="social-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path class="blog-n" d="M6 17V7h2.6l6.8 7.2V7H18v10h-2.6L8.6 9.8V17H6Z"/></svg></span><span class="visually-hidden">블로그</span>
+          </a>
+        </div>
+      </section>
 
-    <section class="principles" aria-labelledby="principles-title">
-      <h2 id="principles-title" class="section-title">설계 원칙</h2>
-      <div class="principle-list">
-        <article class="principle-card">
-          <div class="principle-header"><span class="principle-number" aria-hidden="true">①</span><h3 class="principle-title">맞춤 보장</h3></div>
-          <ul class="principle-items"><li>보장 분석</li><li>맞춤 설계</li></ul>
-        </article>
-        <article class="principle-card">
-          <div class="principle-header"><span class="principle-number" aria-hidden="true">②</span><h3 class="principle-title">합리적 보험료</h3></div>
-          <ul class="principle-items"><li>사업비 절감</li><li>고정지출 감소</li></ul>
-        </article>
-        <article class="principle-card">
-          <div class="principle-header"><span class="principle-number" aria-hidden="true">③</span><h3 class="principle-title"><span class="amber-highlight">차액 저축</span></h3></div>
-          <ul class="principle-items"><li>비과세 복리 저축 · 연금 · 상속</li></ul>
-        </article>
+      <nav class="primary-actions" aria-label="보험 서비스 메뉴">
+        <div class="action-grid action-grid--two">
+          <a class="service-action" href="https://azm.kr/fVWt" target="_blank" rel="noopener">
+            <span class="service-icon" aria-hidden="true"><img src="assets/icons/car-front.png" alt=""></span><span>자동차보험 갱신</span><span class="service-chevron" aria-hidden="true">›</span>
+          </a>
+          <button class="service-action" type="button" data-open-sheet="claim-sheet">
+            <span class="service-icon" aria-hidden="true"><img src="assets/icons/document.png" alt=""></span><span>청구서류 확인</span><span class="service-chevron" aria-hidden="true">›</span>
+          </button>
+        </div>
+      </nav>
+    </main>
+
+    <div class="sheet-backdrop" data-close-sheet="all" hidden></div>
+    <section class="bottom-sheet bottom-sheet--small" id="share-sheet" role="dialog" aria-modal="true" aria-labelledby="share-sheet-title" aria-hidden="true" hidden>
+      <div class="sheet-header"><div><h2 id="share-sheet-title">명함 공유하기</h2></div><button class="sheet-close" type="button" data-close-sheet="share-sheet" aria-label="명함 공유 창 닫기"><svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+      <div class="sheet-actions">
+        <button class="sheet-action sheet-action--kakao" type="button" data-kakao-customer-share><span class="sheet-action-icon" aria-hidden="true">K</span><strong>카카오톡으로 공유하기</strong></button>
+        <a class="sheet-action" data-sms-message="customer" href="sms:?body="><span class="sheet-action-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5h16v10H8.5L5 18v-2.5H4v-10Zm3 4h10m-10 3h6"/></svg></span><strong>문자로 공유하기</strong></a>
       </div>
     </section>
-  </main>
-</body>
+
+    <section class="bottom-sheet bottom-sheet--large" id="claim-sheet" role="dialog" aria-modal="true" aria-labelledby="claim-sheet-title" aria-hidden="true" hidden>
+      <div class="sheet-header"><div><p class="section-kicker">CLAIM GUIDE</p><h2 id="claim-sheet-title">보험금 청구 서류 확인</h2></div><button class="sheet-close" type="button" data-close-sheet="claim-sheet" aria-label="보험금 청구 서류 창 닫기"><svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+      <div class="claim-source-note"><span>항목을 누르면 필요서류와 주의사항을 확인할 수 있습니다.</span></div>
+      <div class="claim-list" id="claim-list"></div>
+      <section class="accident-consult accident-consult--liability" aria-labelledby="accident-consult-title">
+        <h3 id="accident-consult-title"><span class="liability-title-blue">일상생활배상책임</span> <span class="liability-title-black">보상 사례</span></h3>
+        <ul class="liability-case-grid" aria-label="일상생활배상책임 보상 사례">
+          <li class="liability-case"><img src="assets/liability-cases/leak-house.png" alt="" aria-hidden="true"><span>아랫집 누수</span></li>
+          <li class="liability-case"><img src="assets/liability-cases/bicycle-accident.png" alt="" aria-hidden="true"><span>자전거 사고</span></li>
+          <li class="liability-case"><img src="assets/liability-cases/pet-accident.png" alt="" aria-hidden="true"><span>반려견 사고</span></li>
+          <li class="liability-case"><img src="assets/liability-cases/child-liability.png" alt="" aria-hidden="true"><span>자녀 배상사고</span></li>
+          <li class="liability-case"><img src="assets/liability-cases/phone-damage.png" alt="" aria-hidden="true"><span>타인<br>휴대폰 파손</span></li>
+        </ul>
+        <div class="liability-inquiry">
+          <p class="consult-cta">보상 가능 문의하기</p>
+          <div class="consult-actions" aria-label="일상생활배상책임 문의">
+            <a class="consult-icon-button consult-icon-button--phone" href="tel:01037715487" aria-label="일상생활배상책임 전화 문의"><img src="assets/icons/phone.png" alt="" aria-hidden="true"></a>
+            <a class="consult-icon-button consult-icon-button--message" href="sms:01037715487" aria-label="일상생활배상책임 문자 문의"><img src="assets/icons/message.png" alt="" aria-hidden="true"></a>
+          </div>
+        </div>
+      </section>
+    </section>
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  </body>
 </html>

@@ -7,11 +7,6 @@
   const KAKAO_IMAGE_URL = "https://leejgc.github.io/mobile-business-card/kakao-share-v4.png";
   const KAKAO_TITLE = "이종찬 | 에즈금융서비스";
   const KAKAO_BUTTON_TITLE = "명함 보기";
-  const KAKAO_CUSTOMER_DESCRIPTION = [
-    "안녕하세요.",
-    "모바일 명함을 공유해 드립니다.",
-    "소개와 연락처는 아래에서 확인해 보세요."
-  ].join("\n");
   const VCF_URL = "assets/lee-jongchan.vcf";
   // Keep social URLs in this one place. Empty strings are intentional until the owner registers a channel.
   const SNS_LINKS = Object.freeze({ youtube: "", instagram: "", blog: "" });
@@ -202,7 +197,6 @@
         objectType: "feed",
         content: {
           title: KAKAO_TITLE,
-          description: KAKAO_CUSTOMER_DESCRIPTION,
           imageUrl: KAKAO_IMAGE_URL,
           imageWidth: 1200,
           imageHeight: 630,
@@ -213,7 +207,7 @@
           link: { mobileWebUrl: KAKAO_CARD_URL, webUrl: KAKAO_CARD_URL },
         }],
       });
-      qa.kakao.attempts.push({ ok: true, mode: "sendDefault", title: KAKAO_TITLE, description: KAKAO_CUSTOMER_DESCRIPTION, imageUrl: KAKAO_IMAGE_URL, button: KAKAO_BUTTON_TITLE, link: KAKAO_CARD_URL });
+      qa.kakao.attempts.push({ ok: true, mode: "sendDefault", title: KAKAO_TITLE, description: null, imageUrl: KAKAO_IMAGE_URL, button: KAKAO_BUTTON_TITLE, link: KAKAO_CARD_URL });
     } catch (error) {
       qa.kakao.attempts.push({ ok: false, reason: "send-error", message: error instanceof Error ? error.message : String(error) });
       showToast("카카오톡 공유를 시작하지 못했습니다. 허용 도메인과 카카오톡 설치 상태를 확인해 주세요.");
